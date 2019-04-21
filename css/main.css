@@ -1,0 +1,139 @@
+/* 头部背景 */
+section.cover.show {
+    /* width: 400px; */
+    height: 520px;
+    /* 倒放模式合起来重复2次 infinite是循环动作 */
+    animation: myfirst 5s alternate infinite;
+    background: no-repeat url(../img/asuna.jpg) fixed 0% -250px;
+}
+
+/* 动画 逐渐隐藏 */
+@keyframes myfirst {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.7;
+    }
+}
+/* 动画 逐渐显示 还原x */
+@keyframes git_2 {
+    from {
+        opacity: 0;
+        transform: scale(0, 1.0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.0, 1.0);
+    }
+}
+
+/* 动画 逐渐压扁x */
+@keyframes git_1 {
+from {
+    opacity: 1;
+    transform: scale(1.0, 1.0);
+}
+
+to {
+    opacity: 0;
+    transform: scale(0, 1.0);
+}
+}
+
+
+/* git评论系统 */
+#gitalk-container {
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 2%;
+    right: 1%;
+    opacity: 0;
+}
+
+
+
+/* 评论控制按钮 */
+#gitalkon {
+    position: fixed;
+    top: 3%;
+    right: 1%;
+    width: 25px;
+    height: 25px;
+    background: rgb(221, 221, 221);
+    /* 边框 */
+    border: 3px solid rgb(156, 156, 156);
+    /* 轮廓 */
+    border-radius: 25px;
+    /* 阴影 */
+    box-shadow: 0px 0px 30px 1px #535353;
+    /* 动画 */
+    transition: transform 2s, box-shadow 2s, background 2s, border 2s;
+    z-index: 9999;
+}
+
+
+/* 播放器 */
+#mp3 {
+    position: fixed;
+    top: 3%;
+    left: 20%;
+    width: 36px;
+    height: 36px;
+    background: rgb(221, 221, 221);
+    /* 边框 */
+    border: 3px solid rgb(156, 156, 156);
+    /* 轮廓 */
+    border-radius: 25px;
+    /* 阴影 */
+    box-shadow: 0px 0px 30px 1px #535353;
+    /* 动画 */
+    z-index: 9999;
+    margin: 0;
+    padding: 5px 5px 2.5px 11px;
+    transition: opacity 2s;
+    opacity: 0;
+}
+
+#mp3:hover{
+    opacity: 1;
+    
+}
+
+
+/* 动画 逐渐压扁x */
+@keyframes git_3 {
+    from {
+        opacity: 1;
+        transform: scale(1.0, 1.0);
+    }
+    
+    to {
+        opacity: 0;
+        transform: scale(1.5, 1.5);
+        box-shadow: 0px 0px 40px 5px #eba716;
+        background: #eba716;
+        border: 3px solid #eba816bd;       
+    }
+}
+    
+
+/* 播放按钮 */
+#mp3butt
+{
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px;
+    border-color:  transparent  transparent transparent rgb(124, 124, 124);
+}
+
+
+/* 评论控制按钮 划过*/
+#gitalkon:hover {
+    transform: scale(2, 2);
+    box-shadow: 0px 0px 40px 5px #eba716;
+    background: #eba716;
+    border: 3px solid #eba816bd;
+}

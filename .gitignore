@@ -1,0 +1,4 @@
+#忽略nginx配置文件和日志目录
+#conf/
+logs/
+.vscode/

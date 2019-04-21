@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>李永乐老师全集</title>
+</head>
+
+<body>
+    <div id="app">
+        <table class="mdui-table mdui-table-hoverable mdui-container-flui">
+            <!-- 页头 -->
+            <thead>
+                <tr>
+                    <th>标题</th>
+                    <!-- <th>地址</th> -->
+                    <th>功能</th>
+                </tr>
+            </thead>
+            <!-- 页内容 -->
+            <tbody v-for="m in json" v-bing:key="m.序列">
+                <tr>
+                    <td v-bind:string=>{{ m.标题 }} </td>
+                    <!-- <td>{{ m.阳光宽频网地址 }} </td> -->
+                    <!-- <td>{{ m.西瓜视频地址 }} </td> -->
+                    <th>
+                        <button @click="打开页面(m.阳光宽频网地址)"> 跳转 </button>
+                    </th>
+                    <th>
+                        <button @click="打开页面(m.西瓜视频地址)"> 备胎 </button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <script src="https://cdnjs.loli.net/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

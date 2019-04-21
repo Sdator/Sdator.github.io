@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Air Home</title>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5790939683174528",
+    enable_page_level_ads: true
+  });
+</script>
+    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/css/mdui.min.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
+    <script type="module">
+        import "./js/main.js";
+        // import ajax from "/js/ajax.js";
+        // new ajax(`debug.php?t=${年月日} ${时分秒} ${时差}`
+        console.log('看什么看没见过帅哥啊');
+        console.log('吵什么还让不让人睡了');
+          
+    </script>
+    <style>
+        #msg
+        {
+            font-size: 20px ;
+            color:red;
+            position:absolute;
+            /* display:inline; */
+            /* transform:translate(200px,500px) */
+        }
+        button
+        {
+            transform:scale3d(1,1,1);
+            /* background-color: aliceblue;
+            color: aliceblue; */
+            transition transform 2s;
+            
+        }
+        button:hover
+        {
+            /* color: blue; */
+            transform:scale3d(2,2,2);
+            /* background-color: blue; */
+        }
+    </style>
+   
+</head>
+<body>
+    <div id="app">
+        <p id="msg"></p>
+        <!-- 表头 -->
+        <div class="mdui-tab mdui-tab-full-width" mdui-tab>
+            <a href="#example4-tab1" class="mdui-ripple" @click="tab=1">开发者Ing...</a>
+            <a href="#example4-tab2" class="mdui-ripple mdui-tab-active" @click="tab=2">War3</a>
+            <a href="#example4-tab3" class="mdui-ripple" @click="tab=3">打赏</a>
+        </div>
+        <!-- 开发中 -->
+        <div v-if="tab==1" class="mdui-container-fluid mdui-typo">
+            <div class="mdui-typo-display-2-opacity" style="font-weight: 800;font-style: italic;">这里空空如也</div>
+        </div>
+
+        <div v-if="tab==2" class="mdui-container mdui-typo">
+            <!-- APP简介 -->
+            <h1><strong>输入需要转换的字符长度为4,字符限制在[0-9 a-z A-Z]之间,例如:aaaZ - aaaa</strong></h1>
+            <p>本程序为魔兽3物理编辑器中的一个物体ID转换为整形数值工具 方便WeeR使用
+                <!-- <a herf="#" @click="openqq">qq:250740270</a></p> -->
+                <!-- <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=250740270&site=qq&menu=yes"> -->
+                <!-- QQ在线 -->
+                <a target="_blank" 
+                    href="tencent://message/?uin=250740270&Site=JooIT.com&Menu=yes" 
+                    mdui-tooltip="{content: 'M我',position: 'top'}">
+                    <!-- <img border="0" src='img/qq2.png' alt="qq:250740270" title="点击这里给我发消息" /> -->
+                    <img border="0" src='img/qq3.png' alt="qq:250740270" />
+                    <!-- <img border="0" src='http://pub.idqqimg.com/wpa/images/counseling_style_52.png' alt="qq:250740270"> -->
+                </a>
+            </p>
+            <!-- 分界线 -->
+            <!-- <div class="mdui-divider"></div> -->
+            <!-- <hr/> -->
+            <!-- 用户输入框 -->
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">开始</label>
+                <input maxlength="4" class="mdui-textfield-input" type="text" v-model="searchTextA" />
+            </div>
+            <!-- <div class="mdui-divider mdui-m-y-2"></div> -->
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">结束</label>
+                <input maxlength="4" class="mdui-textfield-input" type="text" v-model="searchTextB" />
+            </div>
+
+            <!-- 提示信息 -->
+            <p>{{ msg }}</p>
+            <!-- <div class="mdui-spinner mdui-spinner-colorful" v-if="msg == 'Loading...'"></div> -->
+            <div class="mdui-progress">
+                <div class="mdui-progress-indeterminate" v-if="msg == 'Loading...'"></div>
+            </div>
+
+            <!-- 分界线 -->
+            <hr />
+            <!-- <div class="mdui-divider"></div> -->
+            <!-- 表格 -->
+            <table class="mdui-table mdui-table-hoverable mdui-container-flui">
+                <!-- 表头 -->
+                <thead>
+                    <tr>
+                        <th>序列</th>
+                        <th>转换前</th>
+                        <th>转换后</th>
+                        <th>功能</th>
+                    </tr>
+                </thead>
+                <!-- 表格正文 -->
+                <tbody v-for="m in data">
+                    <tr>
+                        <td>{{ m.序列 }} </td>
+                        <td>{{ m.字符 }} </td>
+                        <td>{{ m.整数 }} </td>
+                        <th>
+                            <button 
+                            class="mdui-btn mdui-ripple" 
+                            :class=""
+                            @click="copyto(m,$event)"
+                            @mouseout='按钮特效($event)'
+                            @mouseover='按钮特效($event)'
+                            v-if='m'> 复制 </button>
+                        </th>
+                    </tr>
+                </tbody>
+                <!-- 表尾 -->
+                <tfoot>
+                    <tr>
+                        <th colspan="4" class="mdui-text-center">
+                            商务合作 QQ:250740270 <kbd mdui-tooltip="{content: '不管在身在何处 我都会提醒自己 不要忘记自己活在现实中',position: 'right',delay: 1000}">Air</kbd>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!-- 打赏 -->
+        <div v-if="tab==3" class="mdui-container mdui-typo">
+            <h1>你的支持,是我开发的最大动力 ! Thank you !</h1>
+            <!-- 动力 -->
+            <div class="mdui-progress">
+                <div class="mdui-progress-indeterminate"></div>
+            </div>
+            <!-- 扫一扫 -->
+            <br />
+            <img class="mdui-img-fluid" src="img/IMG_0625.png" />
+            <!-- <div class="mdui-row">
+                        <img class="mdui-img-fluid mdui-img-circle mdui-col-xs-3" src="img/IMG_0624.JPG"/>
+                       
+                </div>
+            -->
+        </div>
+    </div>
+</body>
+
+</html>
