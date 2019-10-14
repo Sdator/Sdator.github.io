@@ -63,7 +63,7 @@
 * 魔兽3
     * [地球生存日](/log/game/war3/地球生存者.md)
     * [mpq路径解析](/log/game/war3/war3路径解析.md)
-    * [字符解析器[2019/4/19][✔]](https://blog.hxun.vip/tools/war3)
+    * [字符解析器[2019/4/19][✔]](https://sdator.github.io/tools/war3)
     
 * 游戏引擎
     * [AGM](/log/game/游戏开发/agm.md)
