@@ -1,23 +1,28 @@
-const gitalk = new Gitalk({
-    clientID: '994ab328c80b557beea5',
-    clientSecret: 'e412bd01a2bae2ec14603c3053fdcbc2b14d4713',
-    repo: 'book',
-    owner: 'liusikair',
-    admin: ['liusikair'],
-    id: decodeURI(location.pathname),        // Ensure uniqueness and length less than 50
-    distractionFreeMode: false    // Facebook-like distraction free mode
-})
-gitalk.render('gitalk-container')
+// const gitalk = new Gitalk({
+//     clientID: '994ab328c80b557beea5',
+//     clientSecret: 'e412bd01a2bae2ec14603c3053fdcbc2b14d4713',
+//     repo: 'book',
+//     owner: 'liusikair',
+//     admin: ['liusikair'],
+//     id: decodeURI(location.pathname),        // Ensure uniqueness and length less than 50
+//     distractionFreeMode: false    // Facebook-like distraction free mode
+// })
+// gitalk.render('gitalk-container')
 
 window.$docsify = {
     el: '#main',
     name: '絕',
     ga: "UA-134934766-1",
     // 启用加载 _sidebar.md
+    // 定制侧边栏
     loadSidebar: true,
     // 自定义 _sidebar.md 文件
     // loadSidebar: 'sidebar.md',
-    // 开启目录功能
+
+    //设置首页默认加载文件
+    // homepage: '/home.md',
+
+    // 多级目录功能
     subMaxLevel: 4,
     // maxLevel: 6,
     // 开启封面页
@@ -32,11 +37,13 @@ window.$docsify = {
     // loadNavbar: true,
     //路由
     alias: {
+        // '/blog/': '/blog/*.md'
 
-        //避免不必要得路由直接指定sidebar文件路径
-        '/log/game/.*/_sidebar.md': '/log/game/_sidebar.md',
-        '/.*/_sidebar.md': '/_sidebar.md',
-        '.(jpg|pn|gif)$': '/img/$1'
+        // 避免不必要的路由冒泡事件
+        // 直接指定sidebar文件路径
+        // '/log/game/.*/_sidebar.md': '/log/game/_sidebar.md',
+        // '/.*/_sidebar.md': '/_sidebar.md',
+        // '.(jpg|pn|gif)$': '/img/$1'
         // "/*":"/home.md",
         // '/war3/':'/log/game/war3',
         // "/War3": "/log/game/war3/地球生存者.md"
@@ -44,13 +51,11 @@ window.$docsify = {
 
     },
     // 按照路由切换
-    nameLink: {
-        "/": "/",
-    },
+    // nameLink: {
+    //     "/": "/",
+    // },
 
 
-    //设置首页默认加载文件
-    homepage: '/home.md',
     //默认加载目录
     plugins: [
         function (hook, vm) {

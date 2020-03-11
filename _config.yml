@@ -1,8 +1,9 @@
-#前期开发用 有文件更新自动更新站点
-# auto: true
-#导入文件 因为默认不能读取下划线的文件
-include: ["_navbar.md","_sidebar.md","_coverpage.md"] 
-# include: [_navbar.md] 
-#定义网站根目录
+# 前期开发用 有文件更新自动更新站点
+auto: true
+# 导入文件 因为默认不能读取下划线的文件
+# include: ["_navbar.md", "_sidebar.md", "_coverpage.md"]
+# include: [_navbar.md]
+# 定义网站根目录
 # baseurl: "/"
-# permalink: /:categories/:year/:month/:day/:title 
+# permalink: /:categories/:year/:month/:day/:title
+#

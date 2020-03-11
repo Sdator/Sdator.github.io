@@ -4,7 +4,7 @@ section.cover.show {
     height: 520px;
     /* 倒放模式合起来重复2次 infinite是循环动作 */
     animation: myfirst 5s alternate infinite;
-    background: no-repeat url(../img/asuna.jpg) fixed 0% -250px;
+    background: no-repeat url(./asuna.jpg) fixed 0% -250px;
 }
 
 /* 动画 逐渐隐藏 */
