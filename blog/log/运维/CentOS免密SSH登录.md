@@ -107,6 +107,8 @@ Feb 19 11:55:28 ss sshd[20977]: Authentication refused: bad ownership or modes f
 
 * `ssh-add ~/.ssh/mayun`
 
-![我是金馆长](/../img/jgz.jpg ':size=200')
+
+![我是金馆长](../../img/jgz.jpg ':size=200')
+
 
 > #### []()2019/2/19 PM By：Air
