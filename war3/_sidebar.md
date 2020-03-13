@@ -5,8 +5,8 @@
     * 单位
     * 地形
     * 特效
-  * 攻略
-    * [地球生存日](/log/game/war3/地球生存者.md)
+  <!-- * 攻略 -->
+    <!-- * [地球生存日](/log/game/war3/地球生存者.md) -->
   * 工具类
     * [路径解析](/log/game/war3/war3路径解析.md)
     * [字符解析器[2019/4/19][✔]](https://sdator.github.io/tools/war3)
