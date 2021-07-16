@@ -41,7 +41,7 @@ const vm = new Vue({
         //提取所有货币类型并保存
         if (this.全部物品 && window.localStorage.length == 2) {
 
-            //初始化赋值  
+            //初始化赋值
             for (const { text } of this.全部物品.currency) {
                 //  console.log(++i, text)
                 // _this.过滤器.货币类型.add(text)
@@ -56,8 +56,9 @@ const vm = new Vue({
         }
 
 
-        //如果本地存在就不读取了
-        //this.过滤器.货币类型 = new Set();
+
+        // 如果本地没有数据
+        // this.过滤器.货币类型 = new Set();
         $.getJSON("贸易数据.json", function (data) {
             //console.log(111, [..._this.过滤器.货币类型].join())
             //console.log(111, JSON.stringify([..._this.过滤器.货币类型]))
@@ -96,7 +97,7 @@ const vm = new Vue({
         分析() {
             //先放进set里面过一次 重复项目
             const 可叠堆货币 = new Set(this.message.split("\n"))
-            //再去处空白、空行内容
+            //再去除空白、空行内容
             可叠堆货币.delete("")
 
             //生成一个副本用作过滤 由于顺序不重要所以可以用set代替数组或map 但是取值不方便
@@ -182,5 +183,3 @@ const vm = new Vue({
     },
 
 })
-
-
